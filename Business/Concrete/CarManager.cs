@@ -24,7 +24,7 @@ namespace Business.Concrete
             {
                 Console.WriteLine("Araba ismi minimum 2 karakter olmalıdır");
             }
-            else if (car.DailyPrice>=0)
+            else if (car.DailyPrice<=0)
             {
                 Console.WriteLine("Araba günlük fiyatı 0'dan büyük olmalıdır.");
             }

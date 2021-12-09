@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess.EntityFramework
 {
     //generic, class:referans tip, IEntity olabilir veya Ientity implemente eden bir nesne olabilir, newlenebilir olmalı.
     public interface IEntityRepository<T> where T:class,IEntity,new()
