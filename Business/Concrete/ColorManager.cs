@@ -14,6 +14,10 @@ namespace Business.Concrete
     public class ColorManager : IColorService
     {
         IColorDal _colordal;
+        public ColorManager(IColorDal colorDal)
+        {
+            _colordal = colorDal;
+        }
         public IResult Add(Color color)
         {
             return new SuccessResult(Messages.ColorAdded);
@@ -26,7 +30,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Color>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Color>>(_colordal.GetAll());
         }
 
         public IDataResult<List<Color>> GetById(int id)

@@ -39,7 +39,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Car>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll());
         }
 
         public IDataResult<List<CarDetailDto>> GetCarDetails()
