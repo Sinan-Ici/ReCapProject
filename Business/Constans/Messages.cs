@@ -37,9 +37,7 @@ namespace Business.Constans
         public static string RentalAdded = "Kiralama kaydı eklendi";
         public static string RentalInvalid = "Kiralama geçersiz";
 
-
-
-
-
+        public static string CarImageAdded="Araba Resmi Eklendi";
+        public static string CarImageDeleted="Araba Resmi Silindi";
     }
 }

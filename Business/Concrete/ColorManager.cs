@@ -22,7 +22,7 @@ namespace Business.Concrete
         }
         public IResult Add(Color color)
         {
-            ValidationTool.Validate(new ColorValidator(), color);
+            
             _colordal.Add(color);
             return new SuccessResult(Messages.ColorAdded);
         }
