@@ -39,5 +39,13 @@ namespace Business.Constans
 
         public static string CarImageAdded="Araba Resmi Eklendi";
         public static string CarImageDeleted="Araba Resmi Silindi";
+
+        public static string AuthorizationDenied = "Yetkiniz yok.";
+        public static string UserRegistered = "Kayıt oldu";
+        public static string UserNotFound = "Kullanıcı bulunamadı";
+        public static string PasswordError = "Parola Hatası";
+        public static string SuccessfulLogin = "Başarılı Giriş";
+        public static string AccessTokenCreated = "Access token başarıyla oluşturuldu";
+        public static string UserAlreadyExists = "Bu kullanıcı zaten mevcut";
     }
 }

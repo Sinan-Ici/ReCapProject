@@ -23,7 +23,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _rentalService.GetAll();
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -34,7 +34,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _rentalService.GetById(id);
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -45,7 +45,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _rentalService.Add(rental);
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }

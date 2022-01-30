@@ -24,7 +24,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _brandService.GetAll();
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -35,7 +35,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _brandService.GetById(id);
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -46,7 +46,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _brandService.Add(brand);
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }

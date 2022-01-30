@@ -24,7 +24,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _customerService.GetAll();
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -35,7 +35,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _customerService.GetById(id);
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -46,7 +46,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _customerService.Add(customer);
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }

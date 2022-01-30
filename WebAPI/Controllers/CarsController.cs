@@ -26,7 +26,7 @@ namespace WebAPI.Controllers
         {
             
             var result = _carService.GetAll();
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -36,7 +36,7 @@ namespace WebAPI.Controllers
         public IActionResult GetCarDetails()
         {
             var result = _carService.GetCarDetails();
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -46,7 +46,7 @@ namespace WebAPI.Controllers
         public IActionResult Add(Car car)
         {
             var result = _carService.Add(car);
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }

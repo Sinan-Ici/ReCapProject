@@ -24,7 +24,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _carImageService.GetAll();
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -35,7 +35,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _carImageService.GetById(id);
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -46,7 +46,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _carImageService.Add(file, carImage);
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -57,7 +57,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _carImageService.Add(file, carImage);
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -68,7 +68,7 @@ namespace WebAPI.Controllers
         {
 
             var result = _carImageService.Add(file, carImage);
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }

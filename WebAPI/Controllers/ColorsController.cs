@@ -27,7 +27,7 @@ namespace WebAPI.Controllers
         {
             
             var result = _colorService.GetAll();
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -38,7 +38,7 @@ namespace WebAPI.Controllers
         {
             
             var result = _colorService.GetById(id);
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -49,7 +49,7 @@ namespace WebAPI.Controllers
         {
                 
             var result = _colorService.Add(color);
-            if (result.Succcess)
+            if (result.Success)
             {
                 return Ok(result);
             }
