@@ -1,6 +1,10 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constans;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspect.Autofac.Caching;
+using Core.Aspect.Autofac.Performance;
+using Core.Aspect.Autofac.Transaction;
 using Core.Aspect.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
@@ -23,7 +27,9 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
+        [SecuredOperation("car.add,admin")]
         [ValidationAspect(typeof(CarValidator))]
+        [CacheRemoveAspect("ICarService.Get")]
         public IResult Add(Car car)
         {
             
@@ -32,12 +38,26 @@ namespace Business.Concrete
             
             
         }
+        [TransactionScopeAspect]
+        public IResult AddTransactionTest(Car car)
+        {
+            Add(car);
+            if (car.ModelYear < 2000)
+            {
+                throw new Exception("2000 model altı araç eklenemez.");
+            }
+
+            Add(car);
+
+            return null;
+        }
 
         public IResult Delete(Car car)
         {
             return new SuccessResult(Messages.CarDeleted);
         }
-
+        [CacheAspect]
+        [PerformanceAspect(5)]
         public IDataResult<List<Car>> GetAll()
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll());
@@ -47,10 +67,11 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
         }
-
+        [CacheRemoveAspect("ICarService.Get")]
         public IResult Update(Car car)
         {
-            throw new NotImplementedException();
+            _carDal.Update(car);
+            return new SuccessResult(Messages.CarUpdated);
         }
 
         IDataResult<List<Car>> ICarService.GetCarsByBrandId(int id)

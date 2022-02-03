@@ -2,6 +2,7 @@
 using Core.Entities.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         public List<OperationClaim> GetClaims(User user)
         {
+             
             using (var context = new ReCapProjectContext())
             {
                 var result = from operationClaim in context.OperationClaims
